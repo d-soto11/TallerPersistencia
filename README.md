@@ -23,8 +23,10 @@ Java >8
 | |b. En Netbeans ir a Team/clone y pegar la url copiada|
 | |c. Seleccionar una carpeta local donde quedarán los archivos fuentes del proyecto|
 | |d. Abrir el módulo company-logic|
-| |e. Seleccionar el proyecto company-TallerPersistencia, click derecho e ir a checkout/checkout revision
-| |f. click en select y el tags seleccionar **paso.1**
+| |e. Ir a la barra de menú de Netbeans Tools/Options/Java/Maven y allí seleccionar la opción
+| |   SkipTest
+| |f. Seleccionar el proyecto company-TallerPersistencia, click derecho e ir a checkout/checkout revision
+| |g. click en select y el tags seleccionar **paso.1**
 |2. Ejecutar las pruebas| |
 ||a. Seleccionar el archivo EmployeePersistenceTest.java|
 ||b.Click derecho **Test File**  |
