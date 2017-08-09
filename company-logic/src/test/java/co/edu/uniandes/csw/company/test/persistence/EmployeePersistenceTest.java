@@ -53,7 +53,7 @@ public class EmployeePersistenceTest {
      *
      * @return Devuelve el jar que Arquillian va a desplegar en el Glassfish
      * embebido. El jar contiene las clases de Employee, el descriptor de la
-     * base de datos y el archivo benas.xml para resolver la inyección de
+     * base de datos y el archivo beans.xml para resolver la inyección de
      * dependencias.
      */
     @Deployment
@@ -73,7 +73,7 @@ public class EmployeePersistenceTest {
     private EmployeePersistence employeePersistence;
 
     /**
-     * Contexto de Persostencia que se va autilizar para acceder a la Base de
+     * Contexto de Persistencia que se va a utilizar para acceder a la Base de
      * datos por fuera de los métodos que se están probando.
      */
     @PersistenceContext
