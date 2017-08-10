@@ -27,6 +27,7 @@ Java >8
 | |   SkipTest
 | |f. Seleccionar el proyecto company-TallerPersistencia, click derecho e ir a checkout/checkout revision
 | |g. click en select y el tags seleccionar **paso.1**
+| |h. sobre el proyecto company-TallerPersistencia click derecho Clean and Build
 |2. Ejecutar las pruebas| |
 ||a. Seleccionar el archivo EmployeePersistenceTest.java|
 ||b.Click derecho **Test File**  |
