@@ -2,6 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>company-logic</artifactId>
     <name>company-logic</name>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
     <parent>
         <groupId>co.edu.uniandes.csw.company</groupId>
         <artifactId>company</artifactId>
@@ -20,5 +22,61 @@
             <artifactId>eclipselink</artifactId>
             <version>2.6.2</version>
         </dependency>
-        </dependencies>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>stop-glassfish</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <executable>/Users/Asistente/GlassFish_Server/glassfish/bin/asadmin.bat</executable>
+                            <arguments>
+                                <argument>stop-domain</argument>            
+                            </arguments>
+                        </configuration>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>start-glassfish</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <executable>/Users/Asistente/GlassFish_Server/glassfish/bin/asadmin.bat</executable>
+                            <arguments>
+                                <argument>start-domain</argument>            
+                            </arguments>
+                        </configuration>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>Deploy-to-Glassfish</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>/Users/Asistente/GlassFish_Server/glassfish/bin/asadmin.bat</executable>
+                            <arguments>
+                                <argument>deploy</argument>
+                                <argument>--user=admin</argument>
+                                <argument>--passwordfile=/Users/Asistente/psswd.asadminpassword</argument>
+                                <argument>--host=localhost</argument>
+                                <argument>--port=4848</argument>
+                                <argument>target/${project.artifactId}-${project.version}.${project.packaging}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                
+            </plugin>     
+        </plugins>
+    </build>
 </project>
